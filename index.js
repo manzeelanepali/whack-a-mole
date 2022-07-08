@@ -1,29 +1,23 @@
-let score = 0;
-
-let displayTheScore = document.getElementById("score");
-
 let holes = document.getElementsByClassName("hole");
-// let randomIndex = Math.floor(Math.random() * holes.length);
-// console.log(holes[1].innerHTML);
+// console.log(holes);
+// dir = key value pairs ko form ma dincha
+// node list (array like object)
+// elemnt - means every thing thats inside tag
 
-// console.log(holes[1].classList);
+// let RandomNumbers = Math.floor(Math.random() * 9);
+// let hole = holes[RandomNumbers];
+// holes[RandomNumbers].classList.toggle("mole");
 
-// console.log(holes[randomIndex].classList.toggle("mole"));
-
+// console.log(RandomNumbers);
+// console.log(holes);
+// console.log(hole);
+// console.log(RandomNumbers
+// set interval bhnya browser ley diyeko method ho
 setInterval(function () {
-  const randomIndex = Math.floor(Math.random() * holes.length);
-  holes[randomIndex].classList.toggle("mole");
-}, 1000 / 2);
+  // instead of 9 you can also put holes.length
+  let RandomNumbers = Math.floor(Math.random() * 9);
 
-let Ourgame = document.getElementById("whack-a-mole");
-
-Ourgame.addEventListener("click", function (e) {
-  //   console.dir(e);
-
-  if (e.target.matches(".mole")) {
-    score++;
-    holes.classList.toggle("mole");
-  }
-  //   console.log(score);
-  displayTheScore.innerHTML = score;
-});
+  //   holes bhanney array of objects ko index  random number acess gareko
+  let hole = holes[RandomNumbers];
+  hole.classList.toggle("mole");
+}, 1000);
